@@ -4,6 +4,10 @@ Gateway Configuration Tools and related docs
 
 Download and install USB driver for your gateway from: https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
 
+Download and unzip the gateway software : gateway_heltec.zip or gateway_ttgo.zip ( depending on the hardware that you choose for your gateway )
+Edit the file upload.cmd - to have teh correct COMport on which teh gateways is attached
+Execute upload.cmd 
+
 Download and install the configurator from  from this repository ( GatewayUI)
 
 1. Connect the device using USB to micro USB cable.
