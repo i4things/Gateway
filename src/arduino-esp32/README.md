@@ -3,8 +3,8 @@
 
 folder : gateway - contains code for open source i4things gateway for ESP32 LoRA platforms 
 
-         to compile it you also need install the provided libraries : Log64, DHTesp, RadioHead ( this version is patched to work 
-	 correctly on ESP32)
+        to compile it you also need to install the provided libraries : Log64, DHTesp, RadioHead ( this version is patched to work 
+	correctly on ESP32)
 		 
  	you need to decide which platform you want to compile it for : the off-the-shelf supported one are :  Heltec 
 	LoRa32, TTGO v1, TTGO v2, TTGO v2,1
