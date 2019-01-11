@@ -15,14 +15,14 @@
 
 #define OLED
 #define HELTEC
-#define DHT_AVAILABLE
+//#define DHT_AVAILABLE
 //#define TTGO1
 //#define TTGO2
 //#define TTGO21
 /////////////////////////////////////////////////////////////////////////////////
 // PLEASE SET VERSION and REVISION HERE
 
-#define Version_Major_Minor_Revision "Ver.#2.82.754"
+#define Version_Major_Minor_Revision "Ver.#2.82.759"
 
 
 #define GATEWAY_NOT_AVAILABLE (-1000.0f)
