@@ -75,13 +75,13 @@
 
 #define DHT_PIN 34
 
-#define LED_PIN 23
+#define LED_PIN 25
 
 #if defined(OLED)
 
 #define DISPLAY_ADDR 0x3c
-#define DISPLAY_SDA 4
-#define DISPLAY_SCL 15
+#define DISPLAY_SDA 21
+#define DISPLAY_SCL 22
 #define DISPLAY_GEOMETRY GEOMETRY_128_64
 #define DISPLAY_RESET_PIN 16
 
@@ -104,8 +104,8 @@
 #if defined(OLED)
 
 #define DISPLAY_ADDR 0x3c
-#define DISPLAY_SDA 4
-#define DISPLAY_SCL 15
+#define DISPLAY_SDA 21
+#define DISPLAY_SCL 22
 #define DISPLAY_GEOMETRY GEOMETRY_128_64
 #define DISPLAY_RESET_PIN 16
 
