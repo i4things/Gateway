@@ -22,7 +22,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 // PLEASE SET VERSION and REVISION HERE
 
-#define Version_Major_Minor_Revision "Ver.#2.82.759"
+#define Version_Major_Minor_Revision "Ver.#2.82.763"
 
 
 #define GATEWAY_NOT_AVAILABLE (-1000.0f)
@@ -115,7 +115,7 @@ void received(uint8_t buf[], uint8_t size, int16_t rssi)
 
 void RF_INIT()
 {
-  gateway->init(FREQ);
+  gateway->init(FREQ, false);
 };
 
 #include "gateway_oled.h"

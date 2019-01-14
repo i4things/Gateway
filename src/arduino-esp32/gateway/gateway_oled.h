@@ -26,10 +26,13 @@ uint32_t DISPLAY_LAST_EXECUTE;
 
 uint8_t DISPLAY_PROGRESS;
 
+uint64_t DISPLAY_MSEC;
+
 inline void DISPLAY_INIT()
 {
-  DISPLAY_LAST_EXECUTE = 0;
+  DISPLAY_LAST_EXECUTE = millis();
   DISPLAY_PROGRESS = 10;
+  DISPLAY_MSEC = 0;
 
   pinMode(DISPLAY_RESET_PIN, OUTPUT);
 
@@ -69,6 +72,7 @@ inline void DISPLAY_WORK()
 {
   if (((uint32_t)(((uint32_t)millis()) - DISPLAY_LAST_EXECUTE)) >= DISPLAY_TIMEOUT)
   {
+    DISPLAY_MSEC += (uint64_t)((uint32_t)(((uint32_t)millis()) - DISPLAY_LAST_EXECUTE));
     DISPLAY_LAST_EXECUTE = millis();
 
     display.clear();
@@ -96,16 +100,17 @@ inline void DISPLAY_WORK()
     String iot_recv_all = " RECV ALL: " +  String(gateway->all_messages());
     display.drawString(0, 30, iot_recv_all.c_str());
 
-#define HOUR_MILLIS 3600000
-#define MINUTE_MILLIS 60000
-#define SECOND_MILLIS 1000
+#define DAY_MILLIS 86400000LL
+#define HOUR_MILLIS 3600000LL
+#define MINUTE_MILLIS 60000LL
+#define SECOND_MILLIS 1000LL
 
-    uint32_t now = millis();
-    uint32_t h = now / HOUR_MILLIS;
-    uint32_t m = (now % HOUR_MILLIS) / MINUTE_MILLIS;
-    uint32_t s = ((now % HOUR_MILLIS) % MINUTE_MILLIS) / SECOND_MILLIS;
+    uint32_t d = (uint32_t)(DISPLAY_MSEC / DAY_MILLIS);
+    uint8_t h = (uint8_t)((DISPLAY_MSEC % DAY_MILLIS)  / HOUR_MILLIS);
+    uint8_t m = (uint8_t)(((DISPLAY_MSEC % DAY_MILLIS) % HOUR_MILLIS) / MINUTE_MILLIS);
+    uint8_t s = (uint8_t)((((DISPLAY_MSEC % DAY_MILLIS) % HOUR_MILLIS) % MINUTE_MILLIS) / SECOND_MILLIS);
 
-    String iot_now = " TIME : " + String(h) + ":" + ((m < 10) ? "0" + String(m) : String(m)) + ":" + ((s < 10) ? "0" + String(s) : String(s));
+    String iot_now = " TIME : " + String(d) + " " + ((h < 10) ? "0" + String(h) : String(h)) + ":"  + ((m < 10) ? "0" + String(m) : String(m)) + ":" + ((s < 10) ? "0" + String(s) : String(s));
     display.drawString(0, 40, iot_now.c_str());
 
     String temp = " T: " +  ((DHT_TEMP_GET() == -20.0f) ?  "---" : String(DHT_TEMP_GET(), 1)) + "C " + ((DHT_HUM_GET() == 0) ? "--" : (String(DHT_HUM_GET()))) + "%";

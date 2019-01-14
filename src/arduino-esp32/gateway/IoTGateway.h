@@ -126,12 +126,15 @@ class IoTGateway
     }
 
     // call before using
-    void init(float freq_)
+    void init(float freq_, bool reset_counter = true)
     {
       first = false;
-      total_ack = 0;
-      total_recv = 0;
-      total_all = 0;
+      if (reset_counter)
+      {
+        total_ack = 0;
+        total_recv = 0;
+        total_all = 0;
+      }
       rssi = IoTGateway_MIN_RSSI;
       active_start = 0;
       freq = freq_;
