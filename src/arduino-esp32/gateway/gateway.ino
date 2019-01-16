@@ -22,7 +22,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 // PLEASE SET VERSION and REVISION HERE
 
-#define Version_Major_Minor_Revision "Ver.#2.82.763"
+#define Version_Major_Minor_Revision "Ver.#2.82.767"
 
 
 #define GATEWAY_NOT_AVAILABLE (-1000.0f)
