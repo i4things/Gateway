@@ -8,7 +8,7 @@ Gateway Configuration Tools and related docs
 
 - Connect the device using USB to micro USB cable.
 
-- Edit the file upload.cmd - to have teh correct COMport on which teh gateways is attached
+- Edit the file upload.cmd - to have the correct COM port on which the gateways is attached
 
 - Execute upload.cmd 
 
