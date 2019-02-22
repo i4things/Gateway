@@ -25,3 +25,34 @@ Gateway Configuration Tools and related docs
 8. Setup Frequency : fill the FREQUENCY with one of the following : 868.1 , 868.3 or 868.5 ( only this frequencies are supported for private gateway) and click "Send to Gateway”.
 9 Finally Click “Get Configuration” and if all is OK the SSID, PASS, GATEWAY ID, GATEWAY KEY, FREQUENCY should have the values you have configured.
 10. Restart The Gateway (non mandatory) 
+
+# If you do not have access to Windows computer
+
+MACOS/UNIX - HowTo configure a gateway from console:
+
+1. Find the com port on which the device is connected:
+
+macos: ls /dev/tty.*
+linux: ls /dev/ttyACM*
+
+2. Connect a terminal to the com port
+
+macos: screen /dev/tty.board_name 115200
+linux: screen /dev/ttyACM0 115200
+
+3. To see the current configuration type:
+21041043-7AE3-47E0-85B7-9287181052BC<and press Enter>
+
+4. To send configuration for WIFI:
+C4E4D104-5F0F-457F-BA94-88B020531276<and press Enter>
+<type ssid><and press Enter>
+<type password><and press Enter>
+
+4. To send configuration for GATEWAY ID and KEY
+03AD745F-AFA4-41A4-ADC7-119A111A1B47<and press Enter>
+<type gateway id><and press Enter>
+<type gateway key><and press Enter>
+
+5. To send configuration for FREQUENCY
+2009B290-57A9-4ADE-BCA6-902EAC723674<and press Enter>
+<type 1146685030 for 868.1Mhz ,type 1146688307 for 868.3Mhz, type 1146691584 for 868.5Mhz><and press Enter>
