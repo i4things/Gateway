@@ -33,17 +33,21 @@ MACOS/UNIX - HowTo configure a gateway from console:
 1. Find the com port on which the device is connected:
 
 macos: ls /dev/tty.*
+
 linux: ls /dev/ttyACM*
 
 2. Connect a terminal to the com port
 
 macos: screen /dev/tty.board_name 115200
+
 linux: screen /dev/ttyACM0 115200
 
 3. To see the current configuration type:
+
 21041043-7AE3-47E0-85B7-9287181052BC<and press Enter>
 
 4. To send configuration for WIFI:
+
 C4E4D104-5F0F-457F-BA94-88B020531276<and press Enter>
 <type ssid><and press Enter>
 <type password><and press Enter>
