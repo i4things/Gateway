@@ -28,7 +28,7 @@ Gateway Configuration Tools and related docs
 
 # If you do not have access to Windows computer
 
-'''
+```
 MACOS/UNIX - HowTo configure a gateway from console:
 
 1. Find the com port on which the device is connected:
@@ -50,8 +50,8 @@ linux: screen /dev/ttyACM0 115200
 4. To send configuration for WIFI:
 
 C4E4D104-5F0F-457F-BA94-88B020531276[and press Enter]
-[type ssid><and press Enter]
-[type password><and press Enter]
+[type ssid][and press Enter]
+[type password][and press Enter]
 
 4. To send configuration for GATEWAY ID and KEY
 03AD745F-AFA4-41A4-ADC7-119A111A1B47[and press Enter]
@@ -61,4 +61,4 @@ C4E4D104-5F0F-457F-BA94-88B020531276[and press Enter]
 5. To send configuration for FREQUENCY
 2009B290-57A9-4ADE-BCA6-902EAC723674[and press Enter]
 [type 1146685030 for 868.1Mhz ,type 1146688307 for 868.3Mhz, type 1146691584 for 868.5Mhz][and press Enter]
-'''
+```
