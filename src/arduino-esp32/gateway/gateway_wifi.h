@@ -36,17 +36,21 @@ uint32_t WIFI_TIMEOUT;
 // 3o sec
 #define WIFI_EXTENDED_TIMEOUT 30000
 
-
-// 2 min
-uint32_t WIFI_RESET_LAST_EXECUTE;
-#define WIFI_RESET_TIMEOUT  120000
-
 // 60 sec
 uint32_t WIFI_CONNECT_LAST_EXECUTE;
 uint32_t WIFI_CONNECT_TIMEOUT;
 //60000
 #define WIFI_CONNECT_TIMEOUT_DEFAULT  60000
 
+// 7 sec over 7 sec for establishing connection we do not considered it internet
+// as the lost of messages wil start at 7 sec for establishing connection
+//Local (~15ms RTT) - 22.5ms
+//Trans-continental (~80ms RTT) - 120ms
+//Inter-continental (~150ms RTT) -  225ms
+//Satellite (~500ms RTT) - 750ms4e az g
+//uint32_t WIFI_CLIENT_CONNECT_LAST_EXECUTE;
+//uint32_t WIFI_CLIENT_CONNECT_TIMEOUT;
+//#define WIFI_CLIENT_CONNECT_TIMEOUT_DEFAULT 7000
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //QUEUE SEND
@@ -63,8 +67,6 @@ uint16_t WIFI_BUF_SIZE_IN_NETWORK;
 //DECODE RECEIVE
 uint8_t WIFI_DECODE_BUF[WIFI_BUF_MAX_SIZE];
 uint16_t WIFI_DECODE_SIZE = 0;
-
-#define WIFI_MAX_READ_TIME 30000
 
 WiFiClient client;
 uint16_t WIFI_LAST_PACKET_TIME;
@@ -111,7 +113,6 @@ inline void WIFI_RESET()
 inline void WIFI_INIT()
 {
   WiFi.persistent (false);
-  WIFI_RESET_LAST_EXECUTE = millis();
 
   WIFI_WAIT = false;
 
@@ -255,6 +256,7 @@ inline void WIFI_TRY_DECODE()
     // process response
     if (WIFI_DECODE_SIZE == (WIFI_DECODE_BUF[0] + 1))
     {
+      // all other will have size > 5
       if  (WIFI_DECODE_SIZE == 5)
       {
         uint32_t server_time;

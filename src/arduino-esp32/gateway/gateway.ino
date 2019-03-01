@@ -14,15 +14,15 @@
 
 
 #define OLED
-#define HELTEC
+//#define HELTEC
 //#define DHT_AVAILABLE
-//#define TTGO1
+#define TTGO1
 //#define TTGO2
 //#define TTGO21
 /////////////////////////////////////////////////////////////////////////////////
 // PLEASE SET VERSION and REVISION HERE
 
-#define Version_Major_Minor_Revision "Ver.#2.82.767"
+#define Version_Major_Minor_Revision "Ver.#2.82.803"
 
 
 #define GATEWAY_NOT_AVAILABLE (-1000.0f)
@@ -33,8 +33,11 @@ uint8_t  GATEWAY_INIT_GATEWAY_KEY[16] = {0, 1, 2, 3, 4, 5, 6, 7 , 8, 9, 10, 11, 
 
 ///////////////////////////////////////////////////////////////////////////////////
 // WIFI constants
+
+
 #define SERVER_PORT 5409
 #define SERVER_HOST "server.i4things.com"
+//#define SERVER_HOST "10.10.10.7"
 
 #define GATEWAY_INIT_WIFI_SSID "N/A"
 #define GATEWAY_INIT_WIFI_PASS "N/A"
@@ -95,6 +98,8 @@ IoTGateway *gateway;
 // called whne wifi deserialzie a packet
 void DISPATCH_RECEIVED(uint8_t buf_[], uint8_t start_index_, uint8_t size_)
 {
+  LOG64_SET("DISPATCH");
+  LOG64_NEW_LINE;
   gateway->add_dispatch_buffer(buf_, start_index_, size_);
 }
 
@@ -214,6 +219,7 @@ void setup()
 
   // Heartbeat
   HEARTBEAT();
+
 }
 
 
