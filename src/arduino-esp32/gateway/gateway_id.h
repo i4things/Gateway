@@ -53,6 +53,8 @@ inline void ID_REINIT()
 
 inline void ID_INIT()
 {
+  // uncomment the following two line if you want every-time you upload 
+  // the software or restart the module to override the EEPROM with the default values 
   //  EEPROM.begin(EEPROM_SIZE);
   //  ID_REINIT();
 
