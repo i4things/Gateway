@@ -22,7 +22,14 @@ Gateway Configuration Tools and related docs
 5. IF all is OK the SSID, PASS, GATEWAY ID, GATEWAY KEY, FREQUENCY should be filled with values.  - if not check the connection.
 6. Setup the WiFi configuration: fill SSID and PASS and click “Send  to Gateway”.
 7. Setup Gateway Details: fill GATEWAY ID and GATEWAY KEY ( provided from the user area of www.i4things.com) and click "Send to Gateway”.
-8. Setup Frequency : fill the FREQUENCY with one of the following : 868.1 , 868.3 or 868.5 ( only this frequencies are supported for private gateway) and click "Send to Gateway”.
+8. Setup Frequency : fill the FREQUENCY and click "Send to Gateway”.
+
+The officially supported are : 433Mhz, 868Mhz and 915Mhz - default is 868Mhz
+
+For nodes on 433 Gateway can be : 433.1, 433.3, 433.5 
+For nodes on 868 Gateway can be : 868.1, 868.3, 868.5 
+For nodes on 915 Gateway can be : 915.1, 915.3, 915.5
+
 9 Finally Click “Get Configuration” and if all is OK the SSID, PASS, GATEWAY ID, GATEWAY KEY, FREQUENCY should have the values you have configured.
 10. Restart The Gateway (non mandatory) 
 
