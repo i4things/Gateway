@@ -27,7 +27,9 @@ Gateway Configuration Tools and related docs
 The officially supported are : 433Mhz, 868Mhz and 915Mhz - default is 868Mhz
 
 For nodes on 433 Gateway can be : 433.1, 433.3, 433.5 
+
 For nodes on 868 Gateway can be : 868.1, 868.3, 868.5 
+
 For nodes on 915 Gateway can be : 915.1, 915.3, 915.5
 
 9 Finally Click “Get Configuration” and if all is OK the SSID, PASS, GATEWAY ID, GATEWAY KEY, FREQUENCY should have the values you have configured.
